@@ -1,0 +1,39 @@
+parameters:
+  serhii_test.form.type.class:         Serhii\Bundle\TestBundle\Form\Type\PortraitCrudType
+  serhii_test.form.handler.class:      Serhii\Bundle\TestBundle\Form\Handler\PortraitCrudHandler
+
+  serhii_company.form.type.class:      Serhii\Bundle\TestBundle\Form\Type\CompanyCrudType
+  serhii_company.form.handler.class:   Serhii\Bundle\TestBundle\Form\Handler\CompanyCrudHandler
+
+services:
+  serhii_test.form.type:
+    class: %serhii_test.form.type.class%
+    tags:
+      - { name: form.type, alias: serhii_portrait_crud_form }
+
+  serhii_test.form.handler:
+    class: %serhii_test.form.handler.class%
+    scope: request
+    arguments:
+      - "serhii_portrait_crud_form"
+      - "serhii_portrait_crud_form"
+      - @request
+      - @doctrine.orm.entity_manager
+      - @oro_entity.routing_helper
+      - @form.factory
+
+  serhii_company.form.type:
+    class: %serhii_company.form.type.class%
+    tags:
+      - { name: form.type, alias: serhii_company_crud_form }
+
+  serhii_company.form.handler:
+    class: %serhii_company.form.handler.class%
+    scope: request
+    arguments:
+      - "serhii_company_crud_form"
+      - "serhii_company_crud_form"
+      - @request
+      - @doctrine.orm.entity_manager
+      - @oro_entity.routing_helper
+      - @form.factory

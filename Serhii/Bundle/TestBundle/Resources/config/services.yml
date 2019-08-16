@@ -1,0 +1,8 @@
+services:
+#    serhii_test.example:
+#        class: Serhii\Bundle\TestBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+parameters:
+  serhii_test.portrait_table.entity.class: Serhii\Bundle\TestBundle\Entity\PortraitCrud
+  serhii_test.company_table.entity.class: Serhii\Bundle\TestBundle\Entity\CompanyCrud
+  serhii_test.portrait_company_dependence.entity.class: Serhii\Bundle\TestBundle\Entity\DependencyCrud

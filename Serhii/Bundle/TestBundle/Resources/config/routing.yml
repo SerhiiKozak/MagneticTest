@@ -1,0 +1,17 @@
+serhii_test_homepage:
+
+    resource:     "@SerhiiTestBundle/Controller/DefaultController.php"
+    type:         annotation
+    prefix: /serhii
+
+serhii_test_company:
+
+    resource:     "@SerhiiTestBundle/Controller/CompanyController.php"
+    type:         annotation
+    prefix: /company
+
+serhii_test_portrait:
+
+    resource:     "@SerhiiTestBundle/Controller/PortraitController.php"
+    type:         annotation
+    prefix: /portrait

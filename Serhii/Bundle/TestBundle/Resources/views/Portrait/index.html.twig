@@ -1,0 +1,13 @@
+{% extends 'OroUIBundle:actions:index.html.twig' %}
+{% import 'OroDataGridBundle::macros.html.twig' as dataGrid %}
+{% set pageTitle = 'serhii_test.simple_crud.entity_portrait_label'|trans %}
+{% set gridName = 'serhii-portraits-grid' %}
+{% block navButtons %}
+    <div class="btn-group">
+        {{ UI.addButton({
+            'path' : path('serhii_test_create'),
+            'title' : 'serhii_test.simple_crud.new'|trans,
+            'label' : 'serhii_test.simple_crud.new'|trans
+        }) }}
+    </div>
+{% endblock %}

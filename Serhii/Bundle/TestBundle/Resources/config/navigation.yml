@@ -1,0 +1,31 @@
+
+oro_menu_config:
+  items:
+    serhii_tab:
+      label: Serhii
+      uri:   '#'
+      extras:
+        position: 300
+    serhii_tab_portrets:
+        label: Serhii Portrets
+        route: serhii_test_index
+        extras:
+          routes: ['/^serhii_test_index/']
+          description: Portrets Link
+    serhii_tab_companies:
+      label: Serhii Companies
+      route: serhii_test_index
+      extras:
+        routes: ['/^serhii_test_index/']
+        description: Companies Link
+
+  tree:
+    application_menu:
+      children:
+        serhii_tab:
+          children:
+            serhii_tab_portrets: ~
+            serhii_tab_companies: ~
+
+titles:
+  serhii_test_index: Serhii Test Crud

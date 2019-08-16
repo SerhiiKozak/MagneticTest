@@ -1,0 +1,100 @@
+datagrids:
+  serhii-portraits-grid:
+    source:
+      type: orm
+      query:
+        select:
+          - portrait_table.id
+          - portrait_table.age
+          - portrait_table.gender
+          - portrait_table.position
+          - portrait_table.area
+        from:
+          - { table: %serhii_test.portrait_table.entity.class%, alias: portrait_table }
+    columns:
+      id:
+        label: serhii_test.simple_crud.id
+      age:
+        label: serhii_test.portrait_crud.age
+      gender:
+        label: serhii_test.portrait_crud.gender
+      position:
+        label: serhii_test.portrait_crud.position
+      area:
+        label: serhii_test.portrait_crud.area
+    properties:
+      id: ~
+      update_link:
+        type:       url
+        route:      serhii_test_update
+        params:     [ id ]
+      delete_link:
+        type:       url
+        route:      serhii_test_delete
+        params:     [ id ]
+    actions:
+      update:
+        type:          navigate
+        label:         oro.grid.action.update
+        icon:          edit
+        link:          update_link
+      delete:
+        type:          navigate
+        label:         oro.grid.action.delete
+        icon:          trash
+        link:          delete_link
+
+  serhii-companies-grid:
+    source:
+      type: orm
+      query:
+        select:
+          - company_table.id
+          - company_table.budget
+          - company_table.trafic_goal
+          - company_table.comment
+          - company_table.start
+          - company_table.end
+          - company_table.landing_link
+        from:
+          - { table: %serhii_test.company_table.entity.class%, alias: company_table }
+        join:
+          left:
+          - {join: %serhii_test.portrait_company_dependence.entity.class%, alias: dependencies, conditionType: WITH, condition:"company_table.id = dependencies.company_id"}
+
+    columns:
+      id:
+        label: serhii_test.company_crud.id
+      budget:
+        label: serhii_test.company_crud.budget
+      traffic_goal:
+        label: serhii_test.company_crud.traffic_goal
+      comment:
+        label: serhii_test.company_crud.comment
+      start:
+        label: serhii_test.company_crud.start
+      end:
+        label: serhii_test.company_crud.end
+      landing_link:
+        label: serhii_test.company_crud.landing_link
+    properties:
+      id: ~
+      update_link:
+        type:       url
+        route:      serhii_company_update
+        params:     [ id ]
+      delete_link:
+        type:       url
+        route:      serhii_company_delete
+        params:     [ id ]
+    actions:
+      update:
+        type:          navigate
+        label:         oro.grid.action.update
+        icon:          edit
+        link:          update_link
+      delete:
+        type:          navigate
+        label:         oro.grid.action.delete
+        icon:          trash
+        link:          delete_link

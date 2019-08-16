@@ -1,0 +1,25 @@
+serhii_test:
+  simple_crud:
+    id:              Id
+    entity_portrait_label:   "Portraits"
+    entity_company_label:   "Companies"
+    entity_plural_label:    "Home Page"
+
+    edit: Edit
+    new: New
+
+  portrait_crud:
+    portrait_label: Portrait
+    age: Age
+    gender: Gender
+    position: Position
+    area: Area
+
+  company_crud:
+    company_label: Company
+    budget: Budget
+    trafic_goal: Traffic Goal
+    comment: Comment
+    start: Start
+    end: End
+    landing_link: Link
