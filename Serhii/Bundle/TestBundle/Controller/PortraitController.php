@@ -100,7 +100,6 @@ class PortraitController extends Controller
         $type = '';
         $portraitModel->addColumn($name, $type);
       }
-      echo 'lol';
     }
 
   /**
