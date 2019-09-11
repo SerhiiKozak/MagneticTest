@@ -33,7 +33,7 @@ class DependencyCrud
      *
      * @ORM\Column(name="companu_id", type="integer")
      */
-    private $companu_id;
+    public $companu_id;
 
 
     /**

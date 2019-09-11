@@ -34,6 +34,11 @@
 {% endblock content_data %}
 
 {% block navButtons %}
+    {{ UI.addButton({
+        'path' : path('serhii_test_add_field'),
+        'title' : 'serhii_test.simple_crud.add_field'|trans,
+        'label' : 'serhii_test.simple_crud.add_field'|trans
+    }) }}
     {{ UI.cancelButton(path('serhii_test_index')) }}
     {% set html = UI.saveAndCloseButton() %}
     {% if form.vars.value.id or resource_granted('serhii_test_update') %}

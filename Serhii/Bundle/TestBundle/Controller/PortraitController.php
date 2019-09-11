@@ -7,10 +7,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
+use Serhii\Bundle\TestBundle\Model\PortraitModel;
 
 class PortraitController extends Controller
 {
-    /**
+
+  /**
      * @Route ("/index", name="serhii_test_portrait")
      * @Template
      */
@@ -84,4 +86,30 @@ class PortraitController extends Controller
             'formAction' => $formAction
         );
     }
+
+  /**
+   * @Route("/add_field", name="serhii_test_add_field")
+   * @Template
+   */
+    protected function addField(PortraitModel $portraitModel)
+    {
+      if (!empty($_POST['name']) && !empty($_POST['type']) )
+      {
+        var_dump($_POST); die;
+        $name = '';
+        $type = '';
+        $portraitModel->addColumn($name, $type);
+      }
+      echo 'lol';
+    }
+
+  /**
+   * @Route ("/show_form", name="serhii_test_add_field")
+   * @Template
+   */
+    public function showAddFormAction()
+    {
+      return $this->render('SerhiiTestBundle:Portrait:add_form.html.twig');
+    }
+
 }

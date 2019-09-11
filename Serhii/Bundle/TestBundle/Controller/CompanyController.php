@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Response;
+use Serhii\Bundle\TestBundle\Model\PortraitModel;
 
 class CompanyController extends Controller
 {
@@ -33,7 +34,7 @@ class CompanyController extends Controller
     }
 
     /**
-     * @Route("/update/{id}", name="serhii_test_update", requirements={"id"="\d+"})
+     * @Route("/update/{id}", name="serhii_company_update", requirements={"id"="\d+"})
      * @Template
      */
     public function updateAction(CompanyCrud $entity)
@@ -44,7 +45,7 @@ class CompanyController extends Controller
     }
 
     /**
-     * @Route("/delete/{id}", name="serhii_test_delete", requirements={"id"="\d+"})
+     * @Route("/delete/{id}", name="serhii_company_delete", requirements={"id"="\d+"})
      * @Template
      */
     public function deleteAction($id)
@@ -78,11 +79,14 @@ class CompanyController extends Controller
             $saved = true;
         }
 
+        $portraitModel = new PortraitModel();
         return array(
             'entity'     => $entity,
             'saved'      => $saved,
             'form'       => $this->get('serhii_company.form.handler')->getForm()->createView(),
+            'portraits'  => $portraitModel->getPortraits(),
             'formAction' => $formAction
         );
     }
+
 }

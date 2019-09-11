@@ -7,6 +7,8 @@ serhii_test:
 
     edit: Edit
     new: New
+    save: Save
+    add_field: Add Field
 
   portrait_crud:
     portrait_label: Portrait
@@ -23,3 +25,4 @@ serhii_test:
     start: Start
     end: End
     landing_link: Link
+    portrait: Portraits

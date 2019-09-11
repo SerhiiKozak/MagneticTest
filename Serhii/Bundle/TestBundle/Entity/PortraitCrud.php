@@ -3,6 +3,8 @@
 namespace Serhii\Bundle\TestBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Oro\Bundle\EntityConfigBundle\Metadata\Annotation\Config;
+use Oro\Bundle\EntityConfigBundle\Metadata\Annotation\ConfigField;
 
 /**
  * PortraitCrud
@@ -41,7 +43,7 @@ class PortraitCrud
      *
      * @ORM\Column(name="position", type="string")
      */
-    private $position;
+    public $position;
 
     /**
      * @var string
@@ -49,7 +51,6 @@ class PortraitCrud
      * @ORM\Column(name="area", type="string")
      */
     private $area;
-
 
     /**
      * Get id

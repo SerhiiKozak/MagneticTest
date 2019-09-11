@@ -1,0 +1,17 @@
+{% extends 'OroUIBundle:actions:index.html.twig' %}
+{% set pageTitle = 'Add Field' %}
+{% block content %}
+    <form>
+        <label> Field Name</label>
+        <input type="text">
+        <label> Field Name</label>
+        <select>
+            <option selected="selected">String</option>
+            <option>Text</option>
+            <option>Integer</option>
+            <option>Boolean</option>
+            <option>Date</option>
+        </select>
+
+    </form>
+{% endblock content %}

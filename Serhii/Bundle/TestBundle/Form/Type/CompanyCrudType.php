@@ -58,6 +58,18 @@ class CompanyCrudType extends AbstractType
                     'required'    => true,
                     'label'       => 'serhii_test.company_crud.landing_link',
                 ]
+            )
+            ->add(
+              'portrait',
+              'genemu_jqueryselect2_entity',
+              [
+                    'required' => true,
+                    'multiple' => true,
+                    'label'    => 'Portrait',
+                    'class'    => 'Serhii\Bundle\TestBundle\Entity\PortraitCrud',
+                    'configs'  => ['placeholder' => 'please select portrait'],
+                    'property' => 'position',
+              ]
             );
     }
 

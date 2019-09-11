@@ -60,21 +60,17 @@ datagrids:
           - { table: %serhii_test.company_table.entity.class%, alias: company_table }
         join:
           left:
-          - {join: %serhii_test.portrait_company_dependence.entity.class%, alias: dependencies, conditionType: WITH, condition:"company_table.id = dependencies.company_id"}
+          - {join: %serhii_test.portrait_company_dependence.entity.class%, alias: dependencies, conditionType: WITH, condition:"company_table.id = dependencies.companu_id"}
 
     columns:
       id:
-        label: serhii_test.company_crud.id
+        label: serhii_test.simple_crud.id
       budget:
         label: serhii_test.company_crud.budget
       traffic_goal:
-        label: serhii_test.company_crud.traffic_goal
+        label: serhii_test.company_crud.trafic_goal
       comment:
         label: serhii_test.company_crud.comment
-      start:
-        label: serhii_test.company_crud.start
-      end:
-        label: serhii_test.company_crud.end
       landing_link:
         label: serhii_test.company_crud.landing_link
     properties:

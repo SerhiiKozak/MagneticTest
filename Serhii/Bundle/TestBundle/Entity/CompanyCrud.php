@@ -63,6 +63,13 @@ class CompanyCrud
      */
     private $landing_link;
 
+    /**
+     * @var int
+     *
+     * @ORM\JoinTable(name="portrait_crud")
+     * @ORM\Column(name="area", type="integer")
+     */
+    private $portrait;
 
     /**
      * Get id
@@ -218,5 +225,28 @@ class CompanyCrud
         return $this->landing_link;
     }
 
+    /**
+     * Set portrait
+     *
+     * @param int
+     *
+     * @return CompanyCrud
+     */
+    public function setPortrait($portrait)
+    {
+      $this->portrait = $portrait;
+
+      return $this;
+    }
+
+    /**
+     * Get landingLink
+     *
+     * @return string
+     */
+    public function getPortrait()
+    {
+      return $this->portrait;
+    }
 }
 
